@@ -1,0 +1,17 @@
+.btn{
+font-weight: 600;
+text-decoration: none;
+letter-spacing: -0.05em;
+background-color: var(--color-rose);
+color: var(--color-light);
+padding: .5em 1em;
+border-radius: 6px;
+box-shadow: 0 10px 20px 0 rgba(255, 29, 72, .5),0 6px 6px 0 rgba(255, 29, 72, .5),0 0 100px -10px var(--color-rose);
+transition: all .3s;
+}
+
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px 0 rgba(255, 29, 72, .25),0 10px 10px 0 rgba(255, 29, 72, .22),0 0 120px -10px var(--color-rose);
+}
