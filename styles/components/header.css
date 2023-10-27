@@ -9,6 +9,17 @@
   display:flex;
   align-items: center;
   list-style: none;
+  gap: 2em;
+ 
+  
+}
+
+.header__menu  .header__links a{
+  text-decoration: none;
+  font-size: var(--size-xm);
+  font-weight: 600;
+  color: var(--color-slate600);
+ 
 }
 
 
