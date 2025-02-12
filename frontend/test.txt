@@ -1,0 +1,5 @@
+  const images = ["/macbook.png", "/ipad.png", "/iphone.png"];
+
+
+
+
