@@ -31,6 +31,7 @@ const CostMaintainance = ({}) => {
   return (
     <div className="p-3 ">
       <motion.div
+        
         initial="hidden"
         whileInView="visible"
         variants={costMaintainanceVariants}

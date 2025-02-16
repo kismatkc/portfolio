@@ -5,6 +5,20 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Image from "next/image";
+import { motion, Variants } from "framer-motion";
+const arsenalContainerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.3 },
+  },
+};
+const arsenalContainerChildrenVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+  },
+};
 
 const webTools = [
   {
@@ -52,13 +66,26 @@ const webTools = [
 ];
 
 const Arsenal = ({}) => {
+  const MotionImage = motion(Image);
   return (
-    <div className="flex gap-x-3  px-3 mt-3 flex-wrap gap-y-6 py-3">
+    <motion.div
+      className="flex gap-x-3  px-3 mt-3 flex-wrap gap-y-6 py-3"
+      initial="hidden"
+      whileInView="visible"
+      variants={arsenalContainerVariants}
+      viewport={{ once: true, amount: 0.2 }}
+    >
       {webTools.map((tool, i) => (
         <TooltipProvider key={i} delayDuration={150}>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Image src={tool.src} alt={tool.tip} width={50} height={50} />
+              <MotionImage
+                src={tool.src}
+                alt={tool.tip}
+                width={50}
+                height={50}
+                variants={arsenalContainerChildrenVariants}
+              />
             </TooltipTrigger>
 
             <TooltipContent className="mb-2 mr-1 ml-1">
@@ -67,7 +94,7 @@ const Arsenal = ({}) => {
           </Tooltip>
         </TooltipProvider>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
