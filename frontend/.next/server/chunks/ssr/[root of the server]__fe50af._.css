@@ -596,12 +596,28 @@ body {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
+.left-0 {
+  left: 0;
+}
+
 .left-\[1px\] {
   left: 1px;
 }
 
 .left-\[21px\] {
   left: 21px;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.top-0 {
+  top: 0;
 }
 
 .top-\[1px\] {
@@ -684,6 +700,10 @@ body {
   height: 2.25rem;
 }
 
+.h-\[\.5vh\] {
+  height: .5vh;
+}
+
 .h-\[18px\] {
   height: 18px;
 }
@@ -718,6 +738,10 @@ body {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.select-none {
+  user-select: none;
 }
 
 .flex-col {
@@ -820,6 +844,10 @@ body {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+
+.bg-brand-green {
+  background-color: hsl(var(--brand-green));
 }
 
 .bg-destructive {

@@ -14,15 +14,17 @@ const summaryParaphraphOne =
 const summaryParaphraphTwo =
   "I believe every brand has a story worth sharing, and I am passionate about bridging your vision with the online world through engaging experiences that capture attention. I specialize in building digital platforms that combine simplicity with a touch of artistry, ensuring that your website or mobile solution resonates with your audience while reflecting who you are.";
 const summaryParaphraphThree =
-  "Whether it's a website that mirrors your brand's character or a mobile solution designed for effortless interaction, By focusing on clarity, quality, and detail, I create inviting environments that not only inform but also inspire trust and lasting connections. Let’s work together to transform your ideas into a compelling digital presence that truly embodies your unique story";
+  "By focusing on clarity, quality, and detail, I create inviting environments that not only inform but also inspire trust and lasting connections. Let’s work together to transform your ideas into a compelling digital presence that truly embodies your unique story";
 
 const AboutMe = ({}) => {
   return (
-    <motion.section className="flex flex-col pl-3 pr-1 mt-10"  
-        initial="hidden"
-        whileInView="visible"
+    <motion.section
+      className="flex flex-col pl-3 pr-1 mt-10"
+      initial="hidden"
+      whileInView="visible"
       variants={aboutMeVariants}
-        viewport={{ once: true, amount: 0.2 }} >
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="flex flex-col mb-6 gap-y-.5">
         <span className="text-5xl font-bold">kismat kc</span>
         <span className="text-xl font-medium">Toronto,Canada</span>

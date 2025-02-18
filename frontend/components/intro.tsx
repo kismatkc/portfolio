@@ -34,7 +34,7 @@ const NameIntro = ({
 
   if (intro) {
     return (
-      <section className="h-screen flex justify-center items-center">
+      <section className="h-screen flex justify-center items-center select-none">
         <motion.span
           initial={{ x: "110%" }}
           animate={controls}

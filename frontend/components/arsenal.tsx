@@ -35,7 +35,7 @@ const webTools = [
   },
   {
     src: "/arsenal/nativewind.svg",
-    tip: "Nativewind",
+    tip: "React/Nativewind",
   },
 
   {
