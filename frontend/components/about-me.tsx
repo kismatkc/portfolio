@@ -1,3 +1,4 @@
+import { memoizeComponent } from "@/lib/utils";
 import Arsenal from "./arsenal";
 import { motion, Variants } from "framer-motion";
 const aboutMeVariants: Variants = {
@@ -43,5 +44,6 @@ const AboutMe = ({}) => {
     </motion.section>
   );
 };
+const memoizedAboutMe = memoizeComponent(AboutMe);
 
-export default AboutMe;
+export default memoizedAboutMe;

@@ -4,6 +4,7 @@ import { useState } from "react";
 import MagicWords from "./magic-words";
 import InfiniteCarousel from "./infinite-carousel";
 import CostMaintainance from "./cost-maintainance";
+import { memoizeComponent } from "@/lib/utils";
 
 const Hero = () => {
   const [showCarousal, setShowCarousal] = useState(false);
@@ -28,4 +29,6 @@ const Hero = () => {
     </section>
   );
 };
-export default Hero;
+
+const memoizedHero = memoizeComponent(Hero);
+export default memoizedHero;

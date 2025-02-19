@@ -5,9 +5,10 @@ import Hero from "@/components/hero/hero";
 import NameIntro from "@/components/intro";
 import Projects from "@/components/projects";
 import { Scrollbars } from "react-custom-scrollbars";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import TrackCursor from "@/components/track-cursor";
-import throttle from "lodash.throttle";
+import HamburgerMenu from "@/components/navbar";
+//@ts-expect-error not sure abput the structure but its not that important
 function renderThumbVertical({ style, ...props }) {
   // Merge the default style with your custom styles
   const thubStyle = {
@@ -26,11 +27,6 @@ export default function Home() {
   const [intro, setIntro] = useState(true);
   const [cursorPosition, setCursorPosition] = useState(0);
 
-  const throttleCursorPositionChange = useCallback(
-    throttle((scrollValue) => setCursorPosition(scrollValue * 100), 2000),
-    []
-  );
-
   if (intro) return <NameIntro intro={intro} setIntro={setIntro} />;
 
   return (
@@ -40,13 +36,10 @@ export default function Home() {
       thumbSize={50}
       autoHide
       onScrollFrame={(values) => {
-        throttleCursorPositionChange(values.top * 100);
-        // setCursorPosition(Math.trunc(values.top * 100));
-        console.log("is", cursorPosition);
-
-        console.log("should be ", Math.trunc(values.top * 100));
+        setCursorPosition(values.top * 100);
       }}
     >
+      <HamburgerMenu />
       <main className="relative">
         <TrackCursor cursorPosition={cursorPosition} />
         <Hero />
