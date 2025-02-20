@@ -1,5 +1,4 @@
 modules = ["nodejs-20", "web"]
-
 run = "cd frontend && npm run dev"
 [nix]
 channel = "stable-24_05"
@@ -7,3 +6,6 @@ channel = "stable-24_05"
 [[ports]]
 localPort = 3000
 externalPort = 80
+
+[deployment]
+run = ["sh", "-c", "cd frontend && npm run dev"]
