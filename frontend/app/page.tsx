@@ -27,7 +27,7 @@ export default function Home() {
   const [intro, setIntro] = useState(true);
   const [cursorPosition, setCursorPosition] = useState(0);
 
-  // if (intro) return <NameIntro intro={intro} setIntro={setIntro} />;
+  if (intro) return <NameIntro intro={intro} setIntro={setIntro} />;
 
   return (
     <Scrollbars
@@ -39,8 +39,8 @@ export default function Home() {
         setCursorPosition(values.top * 100);
       }}
     >
-      <HamburgerMenu />
       <main className="relative">
+        <HamburgerMenu />
         <TrackCursor cursorPosition={cursorPosition} />
         <Hero />
         <AboutMe />

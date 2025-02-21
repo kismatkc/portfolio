@@ -1241,124 +1241,137 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, k: __turbopack_refresh__, m: module, z: __turbopack_require_stub__ } = __turbopack_context__;
 {
-// import { useState } from "react";
-// import { motion, AnimatePresence } from "framer-motion";
-// import { FileX, Home, Mail, Menu, User } from "lucide-react";
 __turbopack_esm__({
     "default": (()=>__TURBOPACK__default__export__)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__ = __turbopack_import__("[project]/node_modules/lucide-react/dist/esm/icons/menu.js [app-client] (ecmascript) <export default as Menu>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_import__("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-client] (ecmascript) <export default as X>");
+;
+var _s = __turbopack_refresh__.signature();
 ;
 ;
-// const HamburgerMenu = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-//   const menuItems = [
-//     { id: 1, label: "Home", icon: <Home /> },
-//     { id: 2, label: "About Me", icon: <User /> },
-//     { id: 3, label: "Contact", icon: <Mail /> },
-//   ];
-//   const overlayVariants = {
-//     open: { opacity: 1 },
-//     closed: { opacity: 0 },
-//   };
-//   const menuVariants = {
-//     open: {
-//       x: 0,
-//       y: 0,
-//       opacity: 1,
-//       transition: { type: "spring", stiffness: 300, damping: 30 },
-//     },
-//     closed: {
-//       x: "100%",
-//       y: "-100%",
-//       opacity: 0,
-//       transition: { duration: 0.2 },
-//     },
-//   };
-//   return (
-//     <div className="fixed top-4 right-4 z-50">
-//       {/* Hamburger Button */}
-//       <motion.button
-//         aria-label="Toggle menu"
-//         className="p-2 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow"
-//         onClick={() => setIsOpen(!isOpen)}
-//         whileHover={{ scale: 1.05 }}
-//         whileTap={{ scale: 0.95 }}
-//       >
-//         <motion.div animate={isOpen ? "open" : "closed"}>
-//           {isOpen ? <FileX size={24} /> : <Menu size={24} />}
-//         </motion.div>
-//       </motion.button>
-//       <AnimatePresence>
-//         {isOpen && (
-//           <motion.div
-//             className="fixed inset-0 bg-black/10" // Lighter overlay without blur
-//             initial="closed"
-//             animate="open"
-//             exit="closed"
-//             variants={overlayVariants}
-//             onClick={() => setIsOpen(false)}
-//           >
-//             {/* Menu Content with Cone-shaped items */}
-//             <motion.div
-//               className="absolute top-4 right-4 bg-white rounded-xl p-4 shadow-2xl" // Increased shadow
-//               variants={menuVariants}
-//               initial="closed"
-//               animate="open"
-//               exit="closed"
-//               onClick={(e) => e.stopPropagation()}
-//             >
-//               <nav>
-//                 <ul className="space-y-3">
-//                   {menuItems.map((item) => (
-//                     <motion.li
-//                       key={item.id}
-//                       whileHover={{
-//                         x: 5,
-//                         scale: 1.05,
-//                       }}
-//                       className="group relative flex items-center gap-3 px-4 py-3
-//                         text-gray-600 hover:text-indigo-600 cursor-pointer
-//                         before:content-[''] before:absolute before:-inset-1
-//                         before:bg-gradient-to-r before:from-transparent before:to-indigo-100
-//                         before:opacity-0 before:transition-opacity before:rounded-lg
-//                         hover:before:opacity-100"
-//                     >
-//                       {/* Cone shape indicator */}
-//                       <span
-//                         className="absolute -left-2 w-0 h-0 
-//                         border-t-[12px] border-b-[12px] border-r-[12px]
-//                         border-t-transparent border-b-transparent border-r-indigo-600
-//                         opacity-0 group-hover:opacity-100 transition-opacity"
-//                       />
-//                       <span className="text-xl z-10">{item.icon}</span>
-//                       <span className="font-medium z-10">{item.label}</span>
-//                     </motion.li>
-//                   ))}
-//                 </ul>
-//               </nav>
-//             </motion.div>
-//           </motion.div>
-//         )}
-//       </AnimatePresence>
-//     </div>
-//   );
-// };
-// export default HamburgerMenu;
+;
+const menuItems = [
+    "HOME",
+    "PROJECTS",
+    "ABOUT"
+];
 const HamBurger = ({})=>{
+    _s();
+    const [isMenuOpen, setIsMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const navRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "HamBurger.useEffect": ()=>{
+            if (!isMenuOpen || !navRef.current) return;
+            const navElement = navRef.current;
+            const handleClick = {
+                "HamBurger.useEffect.handleClick": (e)=>{
+                    const clickedElement = e.target;
+                    if (!clickedElement) return;
+                    if (navElement.contains(clickedElement)) return;
+                    setIsMenuOpen(false);
+                }
+            }["HamBurger.useEffect.handleClick"];
+            window.addEventListener("click", handleClick);
+            return ({
+                "HamBurger.useEffect": ()=>{
+                    window.removeEventListener("click", handleClick);
+                }
+            })["HamBurger.useEffect"];
+        }
+    }["HamBurger.useEffect"], [
+        isMenuOpen
+    ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {}, void 0, false, {
-            fileName: "[project]/components/navbar.tsx",
-            lineNumber: 113,
-            columnNumber: 3
-        }, this)
-    }, void 0, false, {
+        className: "flex flex-col absolute top-0 right-0 z-10",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex justify-end",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].button, {
+                        className: "hover:shadow-xl p-1 rounded-md block",
+                        whileTap: {
+                            scale: 0.8
+                        },
+                        onClick: (e)=>{
+                            e.stopPropagation();
+                            setIsMenuOpen(!isMenuOpen);
+                        },
+                        children: isMenuOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {}, void 0, false, {
+                            fileName: "[project]/components/navbar.tsx",
+                            lineNumber: 39,
+                            columnNumber: 27
+                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {}, void 0, false, {
+                            fileName: "[project]/components/navbar.tsx",
+                            lineNumber: 39,
+                            columnNumber: 35
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/components/navbar.tsx",
+                        lineNumber: 31,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/components/navbar.tsx",
+                    lineNumber: 30,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/components/navbar.tsx",
+                lineNumber: 29,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                    ref: navRef,
+                    initial: {
+                        y: "-125%"
+                    },
+                    animate: {
+                        y: isMenuOpen ? "0%" : "-125%",
+                        opacity: 1,
+                        transition: {
+                            duration: 1,
+                            type: "spring"
+                        }
+                    },
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                        className: "font-bold",
+                        children: menuItems.map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                className: " py-3 text-right pr-2  hover:text-brand-green hover:cursor-pointer",
+                                children: item
+                            }, i, false, {
+                                fileName: "[project]/components/navbar.tsx",
+                                lineNumber: 55,
+                                columnNumber: 15
+                            }, this))
+                    }, void 0, false, {
+                        fileName: "[project]/components/navbar.tsx",
+                        lineNumber: 53,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/components/navbar.tsx",
+                    lineNumber: 44,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/components/navbar.tsx",
+                lineNumber: 43,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
         fileName: "[project]/components/navbar.tsx",
-        lineNumber: 112,
-        columnNumber: 10
+        lineNumber: 28,
+        columnNumber: 5
     }, this);
 };
+_s(HamBurger, "p4Ogowkeolvk/07zVyQVWte5lek=");
 _c = HamBurger;
 const __TURBOPACK__default__export__ = HamBurger;
 var _c;
@@ -1437,14 +1450,14 @@ function Home() {
             setCursorPosition(values.top * 100);
         },
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$navbar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
-                fileName: "[project]/app/page.tsx",
-                lineNumber: 42,
-                columnNumber: 7
-            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
                 className: "relative",
                 children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$navbar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                        fileName: "[project]/app/page.tsx",
+                        lineNumber: 43,
+                        columnNumber: 9
+                    }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$track$2d$cursor$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                         cursorPosition: cursorPosition
                     }, void 0, false, {
@@ -1465,7 +1478,7 @@ function Home() {
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 43,
+                lineNumber: 42,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {}, void 0, false, {
