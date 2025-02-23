@@ -1,6 +1,6 @@
 "use client";
 import AboutMe from "@/components/about-me";
-import Copyright from "@/components/copyright";
+// import Copyright from "@/components/copyright";
 import Hero from "@/components/hero/hero";
 import NameIntro from "@/components/intro";
 import Projects from "@/components/projects";
@@ -14,8 +14,7 @@ function renderThumbVertical({ style, ...props }) {
   const thubStyle = {
     ...style,
     background: "hsl(var(--brand-green))",
-    // background:
-    // "linear-gradient(50deg,rgba(45,253,74,1) 36%,rgba(34,193,195,1) 100%",
+
     borderRadius: "60px",
   };
 
@@ -43,9 +42,10 @@ export default function Home() {
         <HamburgerMenu />
         <TrackCursor cursorPosition={cursorPosition} />
         <Hero />
+        <Projects />
         <AboutMe />
       </main>
-      <footer>{/* <Copyright /> */}</footer>
+      {/* <footer><Copyright /></footer> */}
     </Scrollbars>
   );
 }

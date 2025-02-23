@@ -25,11 +25,11 @@ const HamBurger = ({}) => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="flex flex-col absolute top-0 right-0 z-10">
+    <nav className="flex flex-col  z-10 fixed top-1 right-3">
       <div className="flex justify-end">
         <AnimatePresence>
           <motion.button
-            className="hover:shadow-xl p-1 rounded-md block"
+            className="hover:shadow-xl p-2 rounded-full block"
             whileTap={{ scale: 0.8 }}
             onClick={(e) => {
               e.stopPropagation();

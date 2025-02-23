@@ -1,7 +1,4 @@
-  const images = ["/macbook.png", "/ipad.png", "/iphone.png"];
-
-
-
-
-0-1
-
+Objective : Creating a navbar
+Requirments
+1. It should keep track of what section we are viewing 
+2.cliking on that navbar should scroll smootlhy to the section if we are not in the current view already
