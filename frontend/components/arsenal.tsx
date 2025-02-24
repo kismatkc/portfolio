@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/tooltip";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
+import { memo } from "react";
 const arsenalContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -98,4 +99,4 @@ const Arsenal = ({}) => {
   );
 };
 
-export default Arsenal;
+export default memo(Arsenal);

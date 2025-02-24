@@ -8,6 +8,7 @@ import { Scrollbars } from "react-custom-scrollbars";
 import { useState } from "react";
 import TrackCursor from "@/components/track-cursor";
 import HamburgerMenu from "@/components/navbar";
+import ScrollToSection from "@/components/scrollToSectionWrapper";
 //@ts-expect-error not sure abput the structure but its not that important
 function renderThumbVertical({ style, ...props }) {
   // Merge the default style with your custom styles
@@ -38,13 +39,13 @@ export default function Home() {
         setCursorPosition(values.top * 100);
       }}
     >
-      <main className="relative">
+      <ScrollToSection>
         <HamburgerMenu />
         <TrackCursor cursorPosition={cursorPosition} />
         <Hero />
         <Projects />
         <AboutMe />
-      </main>
+      </ScrollToSection>
       {/* <footer><Copyright /></footer> */}
     </Scrollbars>
   );

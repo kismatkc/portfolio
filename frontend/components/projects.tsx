@@ -1,22 +1,18 @@
-import useScrollToSection from "@/hooks/scroll-to-section";
 import { useEffect, useRef } from "react";
+import { useSections } from "./scrollToSectionWrapper";
 
 const Projects = ({}) => {
-  const { setProjectPosition } = useScrollToSection();
-  const projectRef = useRef<HTMLDivElement>(null);
+  const { setProjectEl } = useSections();
 
-  useEffect(() => {
-    let flag = false;
-
-    if (projectRef.current?.offsetTop && !flag) {
-      flag = true;
-      console.log(projectRef.current.offsetTop);
-
-      setProjectPosition(projectRef.current.offsetTop);
-    }
-  }, [projectRef.current?.offsetTop, setProjectPosition]);
   return (
-    <section className="h-[800px]" ref={projectRef}>
+    <section
+      className="h-[800px]"
+      ref={(el) => {
+        if (el) {
+          setProjectEl(el as HTMLDivElement);
+        }
+      }}
+    >
       Projects
     </section>
   );

@@ -1,8 +1,7 @@
-import { memoizeComponent } from "@/lib/utils";
 import Arsenal from "./arsenal";
 import { motion, Variants } from "framer-motion";
-import useScrollToSection from "@/hooks/scroll-to-section";
 import { useEffect, useRef } from "react";
+import { useSections } from "./scrollToSectionWrapper";
 
 const aboutMeVariants: Variants = {
   hidden: { opacity: 0 },
@@ -21,18 +20,7 @@ const summaryParaphraphThree =
   "By focusing on clarity, quality, and detail, I create inviting environments that not only inform but also inspire trust and lasting connections. Let’s work together to transform your ideas into a compelling digital presence that truly embodies your unique story";
 
 const AboutMe = ({}) => {
-  const { setAboutMePosition } = useScrollToSection();
-  const aboutMeRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    let flag = false;
-    if (aboutMeRef.current?.offsetTop && !flag) {
-      flag = true;
-      console.log(aboutMeRef.current?.offsetTop, "once");
-
-      setAboutMePosition(aboutMeRef.current?.offsetTop);
-    }
-  }, [aboutMeRef.current?.offsetTop, setAboutMePosition]);
+  const { setAboutMeEl } = useSections();
 
   return (
     <motion.section
@@ -41,7 +29,11 @@ const AboutMe = ({}) => {
       whileInView="visible"
       variants={aboutMeVariants}
       viewport={{ once: true, amount: 0.2 }}
-      ref={aboutMeRef}
+      ref={(el) => {
+        if (el) {
+          setAboutMeEl(el as HTMLDivElement);
+        }
+      }}
     >
       <div className="flex flex-col mb-6 gap-y-.5">
         <span className="text-5xl font-bold">kismat kc</span>
@@ -61,6 +53,5 @@ const AboutMe = ({}) => {
     </motion.section>
   );
 };
-const memoizedAboutMe = memoizeComponent(AboutMe);
 
-export default memoizedAboutMe;
+export default AboutMe;

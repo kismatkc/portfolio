@@ -7,5 +7,10 @@ channel = "stable-24_05"
 localPort = 3000
 externalPort = 80
 
+[[ports]]
+localPort = 35973
+externalPort = 3000
+exposeLocalhost = true
+
 [deployment]
 run = ["sh", "-c", "cd frontend && npm run dev"]

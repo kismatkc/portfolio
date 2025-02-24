@@ -4,24 +4,18 @@ import { useEffect, useRef, useState } from "react";
 import MagicWords from "./magic-words";
 import InfiniteCarousel from "./infinite-carousel";
 import CostMaintainance from "./cost-maintainance";
-import { memoizeComponent } from "@/lib/utils";
-import useScrollToSection from "@/hooks/scroll-to-section";
+import { useSections } from "../scrollToSectionWrapper";
 
 const Hero = () => {
   const [showCarousal, setShowCarousal] = useState(false);
-  const { setHomePosotion, setHomePosotionEl } = useScrollToSection();
-  const homeElRef = useRef<HTMLDivElement>(null);
-
+  const homeElRef = useRef(null);
+  const { setHomeEl } = useSections();
   useEffect(() => {
-    let flag = false;
-
-    if (homeElRef.current?.offsetTop && !flag) {
-      flag = true;
-
-      setHomePosotion(homeElRef.current.offsetTop);
-      setHomePosotionEl(homeElRef.current);
+    if (homeElRef.current) {
+      setHomeEl(homeElRef.current);
     }
-  }, [homeElRef.current?.offsetTop, setHomePosotion]);
+  }, []);
+
   return (
     <section className="flex flex-col gap-y-11" ref={homeElRef}>
       <div className="h-screen flex flex-col">
@@ -43,5 +37,4 @@ const Hero = () => {
   );
 };
 
-const memoizedHero = memoizeComponent(Hero);
-export default memoizedHero;
+export default Hero;

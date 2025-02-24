@@ -14,7 +14,3 @@ export function CapitalizeFirstLetter(word: string) {
     })
     .join("");
 }
-
-export function memoizeComponent(fnc: FC) {
-  return memo(fnc);
-}
