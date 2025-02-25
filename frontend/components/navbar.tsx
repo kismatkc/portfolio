@@ -1,12 +1,38 @@
 import { Menu, X } from "lucide-react";
 
-import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-const menuItems = ["HOME", "PROJECTS", "ABOUT"];
-const HamBurger = ({}) => {
+import { useCallback, useEffect, useRef, useState } from "react";
+import { animate, AnimatePresence, motion } from "framer-motion";
+import { Scrollbars } from "react-custom-scrollbars";
+
+import { useSections } from "./scrollToSectionWrapper";
+type MenuItems = "HOME" | "PROJECTS" | "ABOUT";
+const menuItems: MenuItems[] = ["HOME", "PROJECTS", "ABOUT"];
+const HamBurger = ({ scrollRef }: { scrollRef: Scrollbars | null }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
+  const { userView, sections } = useSections();
 
+  const animateToSection = useCallback(
+    (current: number, targetValue: number) => {
+      console.log(current, targetValue);
+
+      const animation = animate(current, targetValue, {
+        duration: 1000,
+        type: "spring",
+        damping: 20,
+        stiffness: 90,
+        onUpdate: (latest) => {
+          setIsMenuOpen(false);
+          scrollRef?.scrollTop(latest); // Actual scroll update
+        },
+      });
+
+      return animation;
+    },
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
   useEffect(() => {
     if (!isMenuOpen || !navRef.current) return;
     const navElement = navRef.current;
@@ -50,11 +76,22 @@ const HamBurger = ({}) => {
             transition: { duration: 1, type: "spring" },
           }}
         >
-          <ul className="font-bold">
+          <ul className="font-extrabold">
             {menuItems.map((item, i) => (
               <li
                 key={i}
-                className=" py-3 text-right pr-2  hover:text-brand-green hover:cursor-pointer"
+                className={` py-3 text-right pr-2  hover:text-brand-green hover:cursor-pointer transition-colors text-lg ${
+                  item === userView.view && "text-brand-green"
+                }`}
+                onClick={() => {
+                  if (!scrollRef) return;
+                  const currentTop = scrollRef?.getScrollTop();
+
+                  animateToSection(
+                    currentTop,
+                    sections[item]?.offsetTop || window.scrollY
+                  );
+                }}
               >
                 {item}
               </li>

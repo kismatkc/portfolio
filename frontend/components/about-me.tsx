@@ -1,6 +1,5 @@
 import Arsenal from "./arsenal";
 import { motion, Variants } from "framer-motion";
-import { useEffect, useRef } from "react";
 import { useSections } from "./scrollToSectionWrapper";
 
 const aboutMeVariants: Variants = {
