@@ -604,8 +604,16 @@ body {
   position: sticky;
 }
 
+.bottom-3 {
+  bottom: .75rem;
+}
+
 .left-0 {
   left: 0;
+}
+
+.left-2 {
+  left: .5rem;
 }
 
 .left-\[1px\] {
@@ -702,6 +710,11 @@ body {
 
 .hidden {
   display: none;
+}
+
+.size-10 {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .h-10 {
@@ -983,6 +996,11 @@ body {
   line-height: 1;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-sm {
   font-size: .875rem;
   line-height: 1.25rem;
@@ -990,11 +1008,6 @@ body {
 
 .text-xl {
   font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
   line-height: 1.75rem;
 }
 

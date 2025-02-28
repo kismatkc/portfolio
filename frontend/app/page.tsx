@@ -5,10 +5,11 @@ import Hero from "@/components/hero/hero";
 import NameIntro from "@/components/intro";
 import Projects from "@/components/projects";
 import { Scrollbars } from "react-custom-scrollbars";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import TrackCursor from "@/components/track-cursor";
 import HamburgerMenu from "@/components/navbar";
 import ScrollToSection from "@/components/scrollToSectionWrapper";
+import ContactMe from "@/components/contact-me";
 //@ts-expect-error not sure abput the structure but its not that important
 function renderThumbVertical({ style, ...props }) {
   // Merge the default style with your custom styles
@@ -28,6 +29,10 @@ export default function Home() {
   const [cursorPosition, setCursorPosition] = useState(0);
   // const scrollRef = useRef<Scrollbars>(null);
   const [scrollRef, setScrollRef] = useState<Scrollbars | null>(null);
+
+  useEffect(() => {
+    if (!scrollRef) return;
+  }, [scrollRef]);
 
   if (intro) return <NameIntro intro={intro} setIntro={setIntro} />;
 
@@ -51,6 +56,7 @@ export default function Home() {
         <Hero />
         <Projects />
         <AboutMe />
+        <ContactMe />
       </ScrollToSection>
       {/* <footer><Copyright /></footer> */}
     </Scrollbars>

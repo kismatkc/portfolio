@@ -12,27 +12,22 @@ const HamBurger = ({ scrollRef }: { scrollRef: Scrollbars | null }) => {
   const navRef = useRef<HTMLDivElement>(null);
   const { userView, sections } = useSections();
 
-  const animateToSection = useCallback(
-    (current: number, targetValue: number) => {
-      console.log(current, targetValue);
+  const animateToSection = (current: number, targetValue: number) => {
+    console.log(current, targetValue);
 
-      const animation = animate(current, targetValue, {
-        duration: 1000,
-        type: "spring",
-        damping: 20,
-        stiffness: 90,
-        onUpdate: (latest) => {
-          setIsMenuOpen(false);
-          scrollRef?.scrollTop(latest); // Actual scroll update
-        },
-      });
+    const animation = animate(current, targetValue, {
+      duration: 1000,
+      type: "spring",
+      damping: 20,
+      stiffness: 90,
+      onUpdate: (latest) => {
+        setIsMenuOpen(false);
+        scrollRef?.scrollTop(latest); // Actual scroll update
+      },
+    });
 
-      return animation;
-    },
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
+    return animation;
+  };
   useEffect(() => {
     if (!isMenuOpen || !navRef.current) return;
     const navElement = navRef.current;

@@ -7,8 +7,8 @@
   "chunks": [
     "static/chunks/node_modules_next_f62bd0._.js",
     "static/chunks/node_modules_framer-motion_dist_es_a1954e._.js",
-    "static/chunks/node_modules_6d6dba._.js",
-    "static/chunks/[root of the server]__21a443._.js",
+    "static/chunks/node_modules_a22eb9._.js",
+    "static/chunks/[root of the server]__ee817a._.js",
     "static/chunks/[next]_internal_font_google_pacifico_89f6bac5_module_477fe4.css"
   ],
   "source": "dynamic"
