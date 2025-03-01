@@ -14,3 +14,5 @@ export function CapitalizeFirstLetter(word: string) {
     })
     .join("");
 }
+
+
